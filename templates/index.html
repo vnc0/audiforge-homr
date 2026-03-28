@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiforge HOMR - Sheet Music to MusicXML</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="brand">Audiforge HOMR</h1>
+        <p class="subtitle">Convert sheet music PDFs or images into MusicXML</p>
+        <div class="upload-container">
+            <div class="upload-box" id="drop-zone">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24">
+                        <path d="M14,13V17H10V13H7L12,8L17,13H14M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"/>
+                    </svg>
+                    <p class="upload-text">Click or drag a PDF, PNG, JPG, or JPEG file</p>
+                    <p class="upload-hint">PDFs are split into page images, processed with homr, then merged with relieur</p>
+                </div>
+            </div>
+            <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg" class="hidden-input">
+            <div id="processing" class="hidden">
+                <div class="spinner"></div>
+                <p class="status-text">Analyzing your score...</p>
+            </div>
+            <div id="complete" class="hidden">
+                <h2 class="thank-you">Conversion Complete</h2>
+                <p class="subtitle"></p>
+                <div class="button-group">
+                    <button id="download-again" class="btn download-btn">
+                        Download MusicXML
+                    </button>
+                    <button id="new-conversion" class="btn reset-btn">
+                        Convert Another File
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
